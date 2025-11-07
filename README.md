@@ -1,19 +1,21 @@
-# Ansible Collection - cbsch.domeneshop
+# Ansible Collection - ombratteng.domeneshop
 
 ## Requirements
 
 The module requires the [Domeneshop python module](https://pypi.org/project/domeneshop/)
 
-The version tested is `0.4.2`
+The version tested is `0.4.4`
 
 ## Installation
 
 Install from galaxy
+
 ```bash
-ansible-galaxy collection install cbsch.domeneshop
+ansible-galaxy collection install ombratteng.domeneshop
 ```
 
 You might also have to install the domeneshop Python module
+
 ```bash
 python3 -m pip install domeneshop
 ```
@@ -26,7 +28,7 @@ Most basic usage.
 - hosts: localhost
   tasks:
   - name: Update DNS records
-    cbsch.domeneshop.dns:
+    ombratteng.domeneshop.dns:
         domain: example.com
         host: www
         ttl: 3600
@@ -42,7 +44,7 @@ Set authentication details in environment. Useful when running multiple tasks.
 - hosts: localhost
   tasks:
   - name: Update DNS records
-    cbsch.domeneshop.dns:
+    ombratteng.domeneshop.dns:
       domain: example.com
       host: www
       ttl: 3600
@@ -60,7 +62,7 @@ Update multiple records on a single domain name, and caching records in /tmp to 
 - hosts: localhost
   tasks:
     name: Update DNS records
-    cbsch.domeneshop.dns:
+    ombratteng.domeneshop.dns:
       domain: example.com
       host: "{{ item.host }}"
       ttl: 3600
@@ -90,7 +92,7 @@ apt update
 apt install -y python3 python3-pip
 python3 -m pip install ansible
 python3 -m pip install domeneshop
-ansible-galaxy collection install cbsch.domeneshop
+ansible-galaxy collection install ombratteng.domeneshop
 cd ~
 mkdir ansible
 cd ansible
@@ -98,7 +100,7 @@ cat << EOF > playbook.yml
 - hosts: localhost
   tasks:
   - name: Update DNS records
-    cbsch.domeneshop.dns:
+    ombratteng.domeneshop.dns:
         domain: example.com
         host: www
         ttl: 3600
