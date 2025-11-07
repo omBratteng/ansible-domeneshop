@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 from ansible.module_utils.basic import AnsibleModule
 from ansible.module_utils.json_utils import json
 from domeneshop import Client
